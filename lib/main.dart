@@ -1,9 +1,7 @@
-// ignore_for_file: unused_local_variable, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ResumeApp());
 }
 
 class ResumeItem {
@@ -30,14 +28,15 @@ class ResumeItem {
   });
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ResumeApp extends StatelessWidget {
+  const ResumeApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Resume Builder',
       home: ResumeBuilder(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -314,6 +313,13 @@ class _ResumeBuilderState extends State<ResumeBuilder> {
                 setState(() {
                   resumeItems[index].name = name;
                   resumeItems[index].email = email;
+                  resumeItems[index].summary = summary;
+                  resumeItems[index].skills = skills;
+                  resumeItems[index].education = education;
+                  resumeItems[index].languages = languages;
+                  resumeItems[index].projects = projects;
+                  resumeItems[index].certifications = certifications;
+                  resumeItems[index].links = links;
                 });
                 Navigator.of(context).pop();
               },
